@@ -1,0 +1,67 @@
+@import "../variables";
+@import "../mixins";
+
+.pet-name {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 16px;
+  padding: 100px 40px;
+  width: 100%;
+  box-shadow: 3px 4px 10px #00000040;
+  background-color: $cream;
+
+  &__logo {
+    display: block;
+    width: 150px;
+    height: 150px;
+    background: transparent url("../../assets/pet-name-button.svg") no-repeat center center/ contain;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+      transform: rotate(30deg);
+    }
+  }
+
+  &__label {
+    margin-bottom: 15px;
+    font-weight: 800;
+    font-size: 44px;
+    cursor: pointer;
+  }
+
+  &__input {
+    margin-bottom: 35px;
+    border: none;
+    border-radius: 16px;
+    padding: 15px 20px;
+    min-width: 480px;
+    min-height: 60px;
+    box-shadow: 0 4px 4px #00000040;
+    font-weight: 700;
+    font-size: 23px;
+    line-height: 35px;
+    background-color: $main-color;
+
+    &::placeholder {
+      font-weight: 700;
+      font-size: 23px;
+      line-height: 35px;
+      color: $black;
+      opacity: 0.6;
+    }
+  }
+
+  &__error {
+    margin-bottom: 20px;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 35px;
+    color: $error;
+  }
+
+  &__button {
+    @include button;
+  }
+}

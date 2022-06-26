@@ -1,0 +1,182 @@
+@import "../../variables";
+
+.screen {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 30px;
+  border-radius: 16px;
+  padding-bottom: 10px;
+  width: 100%;
+  height: 100%;
+  background: transparent url("../../../assets/main.jpg") no-repeat center center / cover;
+
+  &__bars {
+    position: fixed;
+    top: 20px;
+    display: flex;
+    justify-content: space-around;
+    border-radius: 16px;
+    padding: 15px;
+    width: 60%;
+    background-color: $cream;
+  }
+}
+
+.bedroom {
+  background: transparent url("../../../assets/bedroom.jpg") no-repeat center center / cover;
+}
+
+.kitchen {
+  background: transparent url("../../../assets/kitchen.jpg") no-repeat center center / cover;
+}
+
+.livingRoom {
+  background: transparent url("../../../assets/living\ room.jpg") no-repeat center center / cover;
+}
+
+.bathroom {
+  background: transparent url("../../../assets/bathroom.jpg") no-repeat center center / cover;
+}
+
+.pet {
+  position: relative;
+  width: 300px;
+  height: 300px;
+
+  &__body {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: transparent url("../../../assets/cat.svg") no-repeat center center / contain;
+
+    &--eating {
+      background-image: url("../../../assets/cat-eating.svg");
+    }
+
+    &--washing {
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        overflow: hidden;
+        width: 80%;
+        height: 80%;
+        background: transparent url("../../../assets/soap-bubbles.svg") no-repeat center center / contain;
+        animation: bubbles 2s linear infinite;
+      }
+    }
+  }
+
+  &__eyes {
+    position: absolute;
+    left: 16%;
+    top: 31.4%;
+    width: 122px;
+    height: 100px;
+    background: transparent url("../../../assets/cat-eyes.svg") no-repeat center center / contain;
+    transition: transform 0.3s linear;
+  }
+
+  &__tail {
+    position: absolute;
+    left: 85%;
+    top: 55%;
+    width: 100px;
+    height: 100px;
+    background: transparent url("../../../assets/cat-tail.svg") no-repeat center center / contain;
+    transform-origin: left;
+    animation: tail 3s linear infinite;
+  }
+}
+
+.drag-and-drop-button {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  z-index: 100;
+  border: none;
+  width: 100px;
+  height: 100px;
+  background-color: transparent;
+  cursor: grab;
+}
+
+.button-bed {
+  border: none;
+  background: transparent url("../../../assets/bed-button.svg") no-repeat center center / contain;
+  cursor: pointer;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: auto;
+  }
+}
+
+.button-fish {
+  background: transparent url("../../../assets/fish-button.svg") no-repeat center center / contain;
+
+  &-eating {
+    display: none;
+  }
+}
+
+.button-game {
+  background: transparent url("../../../assets/game-button.svg") no-repeat center center / contain;
+  cursor: pointer;
+}
+
+.button-sponge {
+  background: transparent url("../../../assets/sponge-button.svg") no-repeat center center / contain;
+
+  &-washing {
+    display: none;
+  }
+}
+
+@keyframes tail {
+  0% {
+    transform: rotate(0);
+  }
+
+  25% {
+    transform: rotate(10deg);
+  }
+
+  50% {
+    transform: rotate(15deg);
+  }
+
+  75% {
+    transform: rotate(20deg);
+  }
+
+  100% {
+    transform: rotate(0);
+  }
+}
+
+@keyframes bubbles {
+  0% {
+    transform: translateY(0);
+  }
+
+  25% {
+    transform: translateY(-20);
+  }
+
+  50% {
+    transform: translateY(-40%);
+  }
+
+  75% {
+    transform: translateY(-60%);
+  }
+
+  100% {
+    transform: translateY(-80%);
+  }
+}

@@ -1,0 +1,33 @@
+@import "../../../variables";
+
+.bar {
+  &__out {
+    border: 3px solid $black;
+    border-radius: 3px;
+    width: 200px;
+    height: 20px;
+    background-color: transparent;
+  }
+
+  &__label {
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 28px;
+    text-align: center;
+    color: $black;
+  }
+
+  &__progress {
+    width: 0;
+    height: 100%;
+    background-color: $green;
+  }
+}
+
+.medium {
+  background-color: $yellow;
+}
+
+.low {
+  background-color: $red;
+}

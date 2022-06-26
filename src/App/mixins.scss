@@ -1,0 +1,22 @@
+@import "./variables";
+
+@mixin button {
+  border: none;
+  border-radius: 30px;
+  padding: 20px 30px;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 35px;
+  color: $white;
+  background-color: $dark;
+  transition: background 0.5s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $dark-hover;
+  }
+
+  &:active {
+    background-color: $dark-active;
+  }
+}
